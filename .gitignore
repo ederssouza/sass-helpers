@@ -1,0 +1,6 @@
+css/
+node_modules/
+scss/styles.min.scss
+gulpfile.js
+index.html
+package.json
