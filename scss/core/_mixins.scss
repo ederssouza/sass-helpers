@@ -72,6 +72,13 @@
   filter: alpha(opacity = $opacity-ie);
 }
 
+@mixin placeholder {
+  &::-webkit-input-placeholder  { @content; }
+  &::-moz-placeholder           { @content; }
+  &:-moz-placeholder            { @content; }
+  &:-ms-input-placeholder       { @content; }
+}
+
 @mixin tab-size($size) {
   -webkit-tab-size: #{$size};
      -moz-tab-size: #{$size};
