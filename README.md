@@ -1,219 +1,383 @@
 # Sass Helpers
 
 ## Mixins
-See [_mixins.scss](https://github.com/ederssouza/sass-helpers/blob/master/scss/core/_mixins.scss).
+See [mixins.scss](https://github.com/ederssouza/sass-helpers/blob/master/scss/core/_mixins.scss).
 
-### CSS3
+### CSS3 animation
 
-#### animation
-
+#### scss
 ```scss
-@mixin animation($str) {
-  -webkit-animation: #{$str};
-     -moz-animation: #{$str};
-          animation: #{$str};
+.icon {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  @include animation(changeBg 4s);
 }
 
-@mixin keyframes($animation-name) {
-  @-webkit-keyframes #{$animation-name} {
-    @content;
-  }
-  @-moz-keyframes #{$animation-name} {
-    @content;
-  }
-  @keyframes #{$animation-name} {
-    @content;
-  }
+@include keyframes(changeBg) {
+  from {background-color: red;}
+  to {background-color: yellow;}
 }
 ```
 
-#### background-size
-
-```scss
-@mixin background-size($size) {
-  -webkit-background-size: $size;
-     -moz-background-size: $size;
-       -o-background-size: $size;
-          background-size: $size;
+#### css compiled
+```css
+.icon {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  -webkit-animation: changeBg 4s;
+  -moz-animation: changeBg 4s;
+  animation: changeBg 4s;
 }
-```
 
-#### border-radius
-
-```scss
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-          border-radius: $radius;
-}
-```
-
-#### box-shadow
-
-```scss
-@mixin box-shadow($args...) {
-  -webkit-box-shadow: $args;
-     -moz-box-shadow: $args;
-          box-shadow: $args;
-}
-```
-
-#### font-face
-
-```scss
-@mixin font-face($style-name, $file, $family, $category:'') {
-  $filepath: $fonts-dir + '/' + $family + '/' + $file;
-  @font-face {
-    font-family: '#{$style-name}';
-    src: url($filepath + '.eot');
-    src: url($filepath + '.eot?#iefix') format('embedded-opentype'),
-         url($filepath + '.woff') format('woff'),
-         url($filepath + '.ttf')  format('truetype'),
-         url($filepath + '.svg#' + $style-name + '') format('svg');
+@-webkit-keyframes changeBg {
+  from {
+    background-color: red;
   }
-  %#{$style-name} {
-    font: {
-      @if $category != '' {
-        family: '#{$style-name}', #{$category};
-      } @else {
-        family: '#{$style-name}';
-        weight: normal;
-      }
-    }
+  to {
+    background-color: yellow;
+  }
+}
+
+@-moz-keyframes changeBg {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: yellow;
+  }
+}
+
+@keyframes changeBg {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: yellow;
   }
 }
 ```
 
-#### linear-gradient
+### CSS3 background-size
 
+#### scss
 ```scss
-@mixin linear-gradient($from, $to) {
-  background: $to;
-	background: -moz-linear-gradient(top, $from 0%, $to 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to));
-	background: -webkit-linear-gradient(top, $from 0%,$to 100%);
-	background: -o-linear-gradient(top, $from 0%,$to 100%);
-	background: linear-gradient(to bottom, $from 0%,$to 100%);
+.container {
+  @include background-size(cover);
 }
 ```
 
-#### opacity
-
-```scss
-@mixin opacity($opacity) {
-  opacity: $opacity;
-  $opacity-ie: $opacity * 100;
-  filter: alpha(opacity = $opacity-ie);
+#### css compiled
+```css
+.container {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 ```
 
-#### tab-size
+### CSS3 border-radius
 
+#### scss
 ```scss
-@mixin tab-size($size) {
-  -webkit-tab-size: #{$size};
-     -moz-tab-size: #{$size};
-       -o-tab-size: #{$size};
-          tab-size: #{$size};
+.container {
+  @include border-radius(4px);
 }
 ```
 
-#### transform
-
-```scss
-@mixin transform($args...) {
-  -webkit-transform: #{$args};
-     -moz-transform: #{$args};
-      -ms-transform: #{$args};
-          transform: #{$args};
+#### css compiled
+```css
+.container {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }
 ```
 
-#### transition
+### CSS3 box-shadow
 
+#### scss
 ```scss
-@mixin transition($args...) {
-  -webkit-transition: $args;
-     -moz-transition: $args;
-       -o-transition: $args;
-          transition: $args;
+.container {
+  @include box-shadow(1px 1px 2px rgba(#000, .8));
 }
 ```
 
-### Helpers
+#### css compiled
+```css
+.container {
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+```
 
-#### center-vertical
+### CSS3 @font-face
 
+#### scss
 ```scss
-@mixin center-vertical($position: absolute) {
+$fonts-dir: '../fonts';
+
+@include font-face('Roboto', 'roboto', 'regular');
+```
+
+#### css compiled
+```css
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/regular/roboto.eot");
+  src: url("../fonts/regular/roboto.eot?#iefix") format("embedded-opentype"), url("../fonts/regular/roboto.woff") format("woff"), url("../fonts/regular/roboto.ttf") format("truetype"), url("../fonts/regular/roboto.svg#Roboto") format("svg");
+}
+```
+
+### CSS3 linear-gradient
+
+#### scss
+```scss
+.container {
+  @include linear-gradient(red, orange);
+}
+```
+
+#### css compiled
+```css
+.container {
+  background: orange;
+  background: -moz-linear-gradient(top, red 0%, orange 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, red), color-stop(100%, orange));
+  background: -webkit-linear-gradient(top, red 0%, orange 100%);
+  background: -o-linear-gradient(top, red 0%, orange 100%);
+  background: linear-gradient(to bottom, red 0%, orange 100%);
+}
+```
+
+### opacity
+
+#### scss
+```scss
+.container {
+  @include opacity(.5);
+}
+```
+
+#### css compiled
+```css
+.container {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+```
+
+### CSS3 placeholder input
+
+#### scss
+```scss
+input, textarea {
+
+  @include placeholder {
+    font-style:italic;
+  }
+}
+```
+
+#### css compiled
+```css
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  font-style: italic;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  font-style: italic;
+}
+
+input:-moz-placeholder, textarea:-moz-placeholder {
+  font-style: italic;
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  font-style: italic;
+}
+```
+
+### tab-size
+
+#### scss
+```scss
+pre {
+  @include tab-size(2);
+}
+```
+
+#### css compiled
+```css
+pre {
+  -webkit-tab-size: 2;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+}
+```
+
+### CSS3 transform
+
+#### scss
+```scss
+.icon {
+  @include transform(scale(1.5));
+}
+```
+
+#### css compiled
+```css
+.icon {
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
+}
+
+```
+
+### CSS3 transition
+
+#### scss
+```scss
+button {
+  background-color: #fff;
+  @include transition(background-color .26s);
+
+  &:hover {
+    background-color: #333;
+  }
+}
+```
+
+#### css compiled
+```css
+button {
+  background-color: #fff;
+  -webkit-transition: background-color 0.26s;
+  -moz-transition: background-color 0.26s;
+  -o-transition: background-color 0.26s;
+  transition: background-color 0.26s;
+}
+
+button:hover {
+  background-color: #333;
+}
+```
+
+## Helpers
+
+### center-vertical
+
+#### scss
+```scss
+.icon {
+  height: 100px;
+  width: 100px;
+  @include center-vertical;
+}
+```
+
+#### css compiled
+```css
+.icon {
+  height: 100px;
+  width: 100px;
   left: 50%;
-  position: $position;
+  position: absolute;
   top: 50%;
-  @include transform(translate(-50%, -50%));
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 ```
 
-#### sprite
+### sprite
 
+#### scss
 ```scss
-@mixin sprite($file, $position, $width, $height) {
-  background-image: url($img-dir + '/' + $file);
-  background-position: $position;
-  height: $height;
-  width: $width;
+$img-dir: '../img';
+
+.icon {
+  @include sprite('sprite-icon.png', '0 50px', 50px, 50px);
+}
+```
+
+#### css compiled
+```css
+.icon {
+  background-image: url("../img/sprite-icon.png");
+  background-position: "0 50px";
+  height: 50px;
+  width: 50px;
 }
 ```
 
 ## Functions
-See [_functions.scss](https://github.com/ederssouza/sass-helpers/blob/master/scss/core/_functions.scss).
+See [functions.scss](https://github.com/ederssouza/sass-helpers/blob/master/scss/core/_functions.scss).
 
 
 ### Convert px to em
 
+#### scss
 ```scss
-@function em($pixels, $context: $browser-context) {
-  @return ($pixels / $context) * 1em;
+$browser-context: 16;
+
+.container {
+  font-size: em(14)
+}
+```
+
+#### css compiled
+```css
+.container {
+  font-size: 0.875em;
 }
 ```
 
 ## Placeholders
-See [_placeholders.scss](https://github.com/ederssouza/sass-helpers/blob/master/scss/core/_placeholders.scss).
+See [placeholders.scss](https://github.com/ederssouza/sass-helpers/blob/master/scss/core/_placeholders.scss).
 
-#### placeholder input
 
+### center-block
+
+#### scss
 ```scss
-%placeholder {
-  &.placeholder { @content; }
-  &::-webkit-input-placeholder { @content; }
-  &::-moz-placeholder { @content; }
-  &:-moz-placeholder { @content; }
-  &:-ms-input-placeholder { @content; }
+.container {
+  @extend %center-block;
 }
 ```
 
-#### center-block
-
-```scss
-%center-block {
+#### css compiled
+```css
+.container {
   display: block;
-  margin: {
-    left:  auto;
-    right:  auto;
-  }
+  margin-left: auto;
+  margin-right: auto;
 }
 ```
 
-#### clearfix
+### clearfix
 
+#### scss
 ```scss
-%clearfix {
+.container {
+  @extend %clearfix;
+}
+```
 
-  &:before,
-  &:after {
-    clear: both;
-    content: "";
-    display: block;
-  }
+#### css compiled
+```css
+.container:before,
+.container:after {
+  clear: both;
+  content: "";
+  display: block;
 }
 ```
 
