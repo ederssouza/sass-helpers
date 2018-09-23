@@ -1,6 +1,10 @@
 {
   "name": "@ederssouza/sass-helpers",
+<<<<<<< HEAD
   "version": "1.0.4",
+=======
+  "version": "1.0.3",
+>>>>>>> 21239c9c2374795e4c79156ed78cc98655707c0f
   "description": "Functions, mixins and placeholders for speed up your development process.",
   "repository": {
     "type": "git",
