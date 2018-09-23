@@ -1,5 +1,23 @@
 # Sass Helpers
 
+[![npm version](http://img.shields.io/npm/v/@ederssouza/sass-helpers.svg)](https://npmjs.org/package/@ederssouza/sass-helpers)
+
+Functions, mixins and placeholders for speed up your development process.
+
+## Installation
+
+```bash
+npm install @ederssouza/sass-helpers --save-dev
+```
+
+## How to use
+
+Import the global `index.scss` file in your project.
+
+```scss
+@import '~@ederssouza/sass-helpers/src/index';
+```
+
 ## Mixins
 See [mixins.scss](https://github.com/ederssouza/sass-helpers/blob/master/src/_mixins.scss).
 
