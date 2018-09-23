@@ -1,12 +1,12 @@
 {
   "name": "@ederssouza/sass-helpers",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Sass Helpers",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ederssouza/sass-helpers.git"
   },
-  "keywords": [],
+  "keywords": ["sass helpers", "scss"],
   "author": "Eder Sampaio <edersampaio@outlook.com.br>",
   "license": "MIT",
   "bugs": {
