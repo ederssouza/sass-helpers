@@ -1,7 +1,7 @@
 # Sass Helpers
 
 ## Mixins
-See [mixins.scss](https://github.com/ederssouza/sass-helpers/blob/master/scss/core/_mixins.scss).
+See [mixins.scss](https://github.com/ederssouza/sass-helpers/blob/master/src/_mixins.scss).
 
 ### CSS3 animation
 
@@ -319,7 +319,7 @@ $img-dir: '../img';
 ```
 
 ## Functions
-See [functions.scss](https://github.com/ederssouza/sass-helpers/blob/master/scss/core/_functions.scss).
+See [functions.scss](https://github.com/ederssouza/sass-helpers/blob/master/src/_functions.scss).
 
 
 ### Convert px to em
@@ -341,7 +341,7 @@ $browser-context: 16;
 ```
 
 ## Placeholders
-See [placeholders.scss](https://github.com/ederssouza/sass-helpers/blob/master/scss/core/_placeholders.scss).
+See [placeholders.scss](https://github.com/ederssouza/sass-helpers/blob/master/src/_placeholders.scss).
 
 
 ### center-block
