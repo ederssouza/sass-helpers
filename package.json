@@ -1,6 +1,6 @@
 {
-  "name": "sass-helpers",
-  "version": "1.0.1",
+  "name": "@ederssouza/sass-helpers",
+  "version": "1.0.0",
   "description": "Sass Helpers",
   "repository": {
     "type": "git",
