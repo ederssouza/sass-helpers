@@ -1,12 +1,13 @@
 {
   "name": "@ederssouza/sass-helpers",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Functions, mixins and placeholders for speed up your development process.",
+  "main": "./src/index.scss",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ederssouza/sass-helpers.git"
   },
-  "keywords": ["sass helpers", "scss"],
+  "keywords": ["sass helpers", "scss", "sass mixins", "sass functions", "sass placeholders"],
   "author": "Eder Sampaio <edersampaio@outlook.com.br>",
   "license": "MIT",
   "bugs": {
