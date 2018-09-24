@@ -1,10 +1,6 @@
 {
   "name": "@ederssouza/sass-helpers",
-<<<<<<< HEAD
   "version": "1.0.5",
-=======
-  "version": "1.0.4",
->>>>>>> 2011e832a63007436c4e961c4cdb8abd6afcc17f
   "description": "Functions, mixins and placeholders for speed up your development process.",
   "main": "./src/index.scss",
   "repository": {
