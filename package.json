@@ -1,8 +1,9 @@
 {
   "name": "@ederssouza/sass-helpers",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Functions, mixins and placeholders for speed up your development process.",
-  "main": "./src/index.scss",
+  "main": "index.scss",
+  "style": "index.scss",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ederssouza/sass-helpers.git"
