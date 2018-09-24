@@ -15,7 +15,7 @@ npm install @ederssouza/sass-helpers --save-dev
 Import the global `index.scss` file in your project.
 
 ```scss
-@import '~@ederssouza/sass-helpers/src/index';
+@import '~@ederssouza/sass-helpers';
 ```
 
 ## Mixins
